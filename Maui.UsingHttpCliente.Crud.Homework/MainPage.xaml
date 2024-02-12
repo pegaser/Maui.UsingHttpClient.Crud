@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.UsingHttpCliente.Crud.Homework.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            <Entry x:Name="txtUserName" Placeholder="Enter a User Name"></Entry>
+            <Entry x:Name="txtName" Placeholder="Enter a Name"></Entry>
+            <Button Text="Send" Clicked="BtnSend_Clicked"></Button>
+            <ListView x:Name="lstUsers">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding UserName}" FontAttributes="Bold"></Label>
+                                <Label Text="{Binding Name}"></Label>
+                                <HorizontalStackLayout>
+                                    <Button Text="Update" WidthRequest="150" Clicked="Update_Clicked"></Button>
+                                    <Button Text="Delete" WidthRequest="150" Clicked="Delete_Clicked"></Button>
+                                </HorizontalStackLayout>
+                                <BoxView Color="Gray" HeightRequest="2" HorizontalOptions="Fill" />
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
